@@ -1,0 +1,10 @@
+C:\DATA\WORKSHOP\tuananh\QuanLyDiem\Model\bin\Debug\Model.dll.config
+C:\DATA\WORKSHOP\tuananh\QuanLyDiem\Model\bin\Debug\Model.dll
+C:\DATA\WORKSHOP\tuananh\QuanLyDiem\Model\bin\Debug\Model.pdb
+C:\DATA\WORKSHOP\tuananh\QuanLyDiem\Model\bin\Debug\EntityFramework.dll
+C:\DATA\WORKSHOP\tuananh\QuanLyDiem\Model\bin\Debug\EntityFramework.SqlServer.dll
+C:\DATA\WORKSHOP\tuananh\QuanLyDiem\Model\bin\Debug\EntityFramework.xml
+C:\DATA\WORKSHOP\tuananh\QuanLyDiem\Model\bin\Debug\EntityFramework.SqlServer.xml
+C:\DATA\WORKSHOP\tuananh\QuanLyDiem\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
+C:\DATA\WORKSHOP\tuananh\QuanLyDiem\Model\obj\Debug\Model.dll
+C:\DATA\WORKSHOP\tuananh\QuanLyDiem\Model\obj\Debug\Model.pdb

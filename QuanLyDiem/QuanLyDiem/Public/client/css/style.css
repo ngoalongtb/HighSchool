@@ -1,0 +1,90 @@
+*{margin: 0;padding:0;}
+body{font-family: 'Catamaran', sans-serif;}
+.navbar-default .navbar-collapse
+{background: #7cc3f3;
+margin-top: 20px;}
+.navbar-default .navbar-nav>li>a {
+    color: #fff;
+    text-transform: uppercase;
+   font-size: 12px;
+   font-weight: bold;
+}
+.navbar-default .navbar-nav>.active>a{background-color: none;
+background:#fff; box-shadow: none;color:#ff9639;}
+.navbar-default .navbar-nav>.active>a:hover{background: none; color: #fff;}
+.navbar-default .navbar-nav>li>a:focus{color: orange;}
+.navbar-default .navbar-nav>li>a:hover{background: #fff;
+color:#ff9639; }
+.container-fuild.top{height: 20px; background: #333;}
+.border-to {
+    border: 1px solid #7cc3f3;
+    position: relative
+}
+.border-be {
+    border: 1px solid orange ;
+    position: absolute;
+    width: 149px;
+    top: 52px;
+}
+
+h2.tintuc{color: orange;
+	text-transform: uppercase;
+	font-size: 20px;
+}
+ul.ds{list-style: none;}
+ul.ds li {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px dotted orange;}
+ul.ds li a:hover{color: orange;}
+h3.tt{color: orange;
+	text-transform: uppercase;
+	font-size: 15px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	font-weight: bold;
+}
+.border-too {
+    border: 1px solid #7cc3f3;
+    position: relative;
+}
+img.anh    {width: 200px;
+    height: 150px;
+    padding: 10px 0px;}
+
+
+    img.anh:hover {
+-webkit-transform: rotate(45deg); transform: rotate(45deg);
+}
+img.anh {
+-webkit-transition: all 0.7s ease; transition: all 0.7s ease;
+}
+
+.carousel {
+    margin-bottom: 7px;
+}
+h5{font-weight: bold;font-size: 16px;}
+ul.gt li a:hover{color: orange;}
+ul.gt {
+    margin-left: 17px;}
+h5 a:hover{color: orange;}
+h5 a{color: #333;}
+.footer{height: 150px; ; margin: 5px 0;}
+h4.pm {
+    background: #7cc3f3;
+    height: 34px;
+    line-height: 34px;
+   	text-align: center;
+    width: 320px;
+    color: #fff;
+    text-transform: uppercase;
+}
+ul.pm img{height: 63px;width: 320px;}
+ul.pm{list-style: none}
+ul.pm li{padding-top: 10px;}
+.row.map img{width: 320px;}
+img.map{width: 320px;height: 200px;}
+{width: 320px;}
+.carousel.tv{width: 320px;}
+p.copyright{margin-top: 20px;}
+.hocsinh{height: 842px; background: #e6e6e6;}
