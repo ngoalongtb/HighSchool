@@ -6,13 +6,13 @@ namespace Model.EF
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("LopOnDinh")]
-    public partial class LopOnDinh
+    [Table("DanhMuc")]
+    public partial class DanhMuc
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public LopOnDinh()
+        public DanhMuc()
         {
-            LopHocs = new HashSet<LopHoc>();
+            BaiViets = new HashSet<BaiViet>();
         }
 
         [Key]
@@ -22,17 +22,7 @@ namespace Model.EF
         [StringLength(255)]
         public string ten { get; set; }
 
-        [StringLength(10)]
-        public string ma_khoa { get; set; }
-
-        public bool? da_xoa { get; set; }
-
-        [StringLength(10)]
-        public string ma_gv_chu_nhiem { get; set; }
-
-        public virtual GiaoVien GiaoVien { get; set; }
-
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<LopHoc> LopHocs { get; set; }
+        public virtual ICollection<BaiViet> BaiViets { get; set; }
     }
 }

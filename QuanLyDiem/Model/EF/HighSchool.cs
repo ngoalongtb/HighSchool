@@ -13,6 +13,7 @@ namespace Model.EF
         }
 
         public virtual DbSet<BaiViet> BaiViets { get; set; }
+        public virtual DbSet<DanhMuc> DanhMucs { get; set; }
         public virtual DbSet<GiaoVien> GiaoViens { get; set; }
         public virtual DbSet<HocSinh> HocSinhs { get; set; }
         public virtual DbSet<KyHoc> KyHocs { get; set; }
@@ -42,6 +43,25 @@ namespace Model.EF
             modelBuilder.Entity<BaiViet>()
                 .Property(e => e.hinh_anh)
                 .IsUnicode(false);
+
+            modelBuilder.Entity<BaiViet>()
+                .Property(e => e.ma_danh_muc)
+                .IsFixedLength()
+                .IsUnicode(false);
+
+            modelBuilder.Entity<DanhMuc>()
+                .Property(e => e.ma)
+                .IsFixedLength()
+                .IsUnicode(false);
+
+            modelBuilder.Entity<DanhMuc>()
+                .Property(e => e.ten)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<DanhMuc>()
+                .HasMany(e => e.BaiViets)
+                .WithOptional(e => e.DanhMuc)
+                .HasForeignKey(e => e.ma_danh_muc);
 
             modelBuilder.Entity<GiaoVien>()
                 .Property(e => e.ma)
@@ -145,6 +165,11 @@ namespace Model.EF
                 .IsUnicode(false);
 
             modelBuilder.Entity<LopHoc>()
+                .Property(e => e.ma_lop_on_dinh)
+                .IsFixedLength()
+                .IsUnicode(false);
+
+            modelBuilder.Entity<LopHoc>()
                 .HasMany(e => e.LopHocHocSinhs)
                 .WithRequired(e => e.LopHoc)
                 .HasForeignKey(e => e.ma_lop)
@@ -178,6 +203,11 @@ namespace Model.EF
                 .Property(e => e.ma_gv_chu_nhiem)
                 .IsFixedLength()
                 .IsUnicode(false);
+
+            modelBuilder.Entity<LopOnDinh>()
+                .HasMany(e => e.LopHocs)
+                .WithOptional(e => e.LopOnDinh)
+                .HasForeignKey(e => e.ma_lop_on_dinh);
 
             modelBuilder.Entity<MonHoc>()
                 .Property(e => e.ma)

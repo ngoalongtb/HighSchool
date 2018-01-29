@@ -64,7 +64,8 @@ CREATE TABLE LopHoc(
 	ma_mon_hoc CHAR(10),
 	ma_ky_hoc CHAR(10),
 	da_xoa BIT, --1: xóa
-	ma_giao_vien CHAR(10)
+	ma_giao_vien CHAR(10),
+	ma_lop_on_dinh CHAR(10)
 )
 
 CREATE TABLE LopHocHocSinh(
@@ -92,10 +93,15 @@ CREATE TABLE BaiViet(
 	do_uu_tien INT, -- độ ưu tiên hiển thị
 	da_xoa BIT, --1: xóa
 	tai_khoan CHAR(10),
-	hinh_anh VARCHAR(255)
+	hinh_anh VARCHAR(255),
+	ma_danh_muc CHAR(10)
 	--thoi_gian DATETIME : pro
 )
 GO
+CREATE TABLE DanhMuc(
+	ma CHAR(10) PRIMARY KEY,
+	ten VARCHAR(255)
+)
 
 --CREATE TABLE BinhLuan(
 --	ma CHAR(10) PRIMARY KEY,
@@ -115,6 +121,8 @@ ALTER TABLE LopHoc
 ADD FOREIGN KEY(ma_ky_hoc) REFERENCES KyHoc(ma)
 ALTER TABLE LopHoc
 ADD FOREIGN KEY(ma_giao_vien) REFERENCES GiaoVien(ma)
+ALTER TABLE LopHoc
+ADD FOREIGN KEY(ma_lop_on_dinh) REFERENCES LopOnDinh(ma)
 
 ALTER TABLE TaiKhoan
 ADD FOREIGN KEY(tai_khoan) REFERENCES GiaoVien(ma)
@@ -126,6 +134,9 @@ ADD FOREIGN KEY(ma_hoc_sinh) REFERENCES HocSinh(ma)
 
 ALTER TABLE BaiViet
 ADD FOREIGN KEY(tai_khoan) REFERENCES TaiKhoan(tai_khoan)
+
+ALTER TABLE BaiViet
+ADD FOREIGN KEY(ma_danh_muc) REFERENCES DanhMuc(ma)
 
 --ALTER TABLE BinhLuan
 --ADD FOREIGN KEY(ma_bai_viet) REFERENCES BaiViet(ma)
