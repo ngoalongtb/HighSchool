@@ -1,0 +1,43 @@
+﻿@model Model.EF.DanhMuc
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/AdminMaster.cshtml";
+}
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <h1>
+        Page Header
+        <small>Optional description</small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
+        <li class="active">Here</li>
+    </ol>
+</section>
+<!-- Main content -->
+<section class="content container-fluid">
+
+    <h2>Details</h2>
+
+    <div>
+        <h4>DanhMuc</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.ten)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ten)
+            </dd>
+
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.ma }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+
+</section>
+<!-- /.content -->

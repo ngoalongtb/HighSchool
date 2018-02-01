@@ -143,8 +143,8 @@ desired effect
                             </span>
                         </a>
                         <ul class="treeview-menu">
-                            <li><a href="#">Danh sách</a></li>
-                            <li><a href="#">Thêm mới</a></li>
+                            <li><a href="/Admin/Accounts/Index">Danh sách</a></li>
+                            <li><a href="/Admin/Accounts/Create">Thêm mới</a></li>
                         </ul>
                     </li>
                     <li class="treeview">
@@ -155,8 +155,8 @@ desired effect
                             </span>
                         </a>
                         <ul class="treeview-menu">
-                            <li><a href="#">Danh sách</a></li>
-                            <li><a href="#">Thêm mới</a></li>
+                            <li><a href="/Admin/Teacher/Index">Danh sách</a></li>
+                            <li><a href="/Admin/Teacher/Create">Thêm mới</a></li>
                         </ul>
                     </li>
                     <li class="treeview">
@@ -167,20 +167,20 @@ desired effect
                             </span>
                         </a>
                         <ul class="treeview-menu">
-                            <li><a href="#">Danh sách</a></li>
-                            <li><a href="#">Thêm mới</a></li>
+                            <li><a href="/Admin/Students/Index">Danh sách</a></li>
+                            <li><a href="/Admin/Students/Create">Thêm mới</a></li>
                         </ul>
                     </li>
                     <li class="treeview">
                         <a href="#">
-                            <i class="fa fa-link"></i> <span>Kỳ học</span>
+                            <i class="fa fa-link"></i> <span>Danh mục</span>
                             <span class="pull-right-container">
                                 <i class="fa fa-angle-left pull-right"></i>
                             </span>
                         </a>
                         <ul class="treeview-menu">
-                            <li><a href="#">Danh sách</a></li>
-                            <li><a href="#">Thêm mới</a></li>
+                            <li><a href="/Admin/Categories/Index">Danh sách</a></li>
+                            <li><a href="/Admin/Categories/Create">Thêm mới</a></li>
                         </ul>
                     </li>
                     <li class="treeview">
@@ -304,8 +304,12 @@ desired effect
     <script src="~/Public/admin/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <!-- AdminLTE App -->
     <script src="~/Public/admin/dist/js/adminlte.min.js"></script>
+    <!-- DataTables -->
+    <script src="~/Public/admin/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="~/Public/admin/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
     <!-- Optionally, you can add Slimscroll and FastClick plugins.
          Both of these plugins are recommended to enhance the
          user experience. -->
+    @RenderSection("script", false)
 </body>
 </html>
