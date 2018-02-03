@@ -40,6 +40,8 @@ namespace Model.EF
         [Column(TypeName = "date")]
         public DateTime? ngay_nhap_hoc { get; set; }
 
+        public virtual LopOnDinh LopOnDinh { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<LopHocHocSinh> LopHocHocSinhs { get; set; }
     }

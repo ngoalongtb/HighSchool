@@ -175,6 +175,11 @@ namespace Model.EF
                 .IsUnicode(false);
 
             modelBuilder.Entity<LopOnDinh>()
+                .HasMany(e => e.HocSinhs)
+                .WithOptional(e => e.LopOnDinh)
+                .HasForeignKey(e => e.ma_lop_on_dinh);
+
+            modelBuilder.Entity<LopOnDinh>()
                 .HasMany(e => e.LopHocs)
                 .WithOptional(e => e.LopOnDinh)
                 .HasForeignKey(e => e.ma_lop_on_dinh);

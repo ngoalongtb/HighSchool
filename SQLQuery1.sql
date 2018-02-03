@@ -117,6 +117,8 @@ ADD FOREIGN KEY(ma_giao_vien) REFERENCES GiaoVien(ma)
 ALTER TABLE LopHoc
 ADD FOREIGN KEY(ma_lop_on_dinh) REFERENCES LopOnDinh(ma)
 
+
+
 ALTER TABLE TaiKhoan
 ADD FOREIGN KEY(tai_khoan) REFERENCES GiaoVien(ma)
 
@@ -131,7 +133,10 @@ ADD FOREIGN KEY(tai_khoan) REFERENCES TaiKhoan(tai_khoan)
 ALTER TABLE BaiViet
 ADD FOREIGN KEY(ma_danh_muc) REFERENCES DanhMuc(ma)
 
+ALTER TABLE HocSinh
+ADD FOREIGN KEY(ma_lop_on_dinh) REFERENCES LopOnDinh(ma)
 --ALTER TABLE BinhLuan
 --ADD FOREIGN KEY(ma_bai_viet) REFERENCES BaiViet(ma)
 --ALTER TABLE BinhLuan
 --ADD FOREIGN KEY(tai_khoan) REFERENCES TaiKhoan(tai_khoan)
+

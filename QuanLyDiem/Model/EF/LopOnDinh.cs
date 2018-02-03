@@ -12,6 +12,7 @@ namespace Model.EF
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public LopOnDinh()
         {
+            HocSinhs = new HashSet<HocSinh>();
             LopHocs = new HashSet<LopHoc>();
         }
 
@@ -29,6 +30,9 @@ namespace Model.EF
         public string ma_gv_chu_nhiem { get; set; }
 
         public virtual GiaoVien GiaoVien { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<HocSinh> HocSinhs { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<LopHoc> LopHocs { get; set; }

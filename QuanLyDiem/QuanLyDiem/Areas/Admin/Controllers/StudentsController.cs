@@ -54,6 +54,7 @@ namespace QuanLyDiem.Areas.Admin.Controllers
                 {
                     string[] _arr = Request.Files[0].FileName.Split('.');
                     string type = _arr[_arr.Length - 1];
+
                     hocSinh.url_anh = hocSinh.ma + "." + type;
                     Request.Files[0].SaveAs(Server.MapPath("~/Public/upload/student/") + hocSinh.url_anh);
                 }

@@ -14,8 +14,6 @@ namespace Model.EF
 
         public string noi_dung { get; set; }
 
-        public string tieu_de { get; set; }
-
         public int? do_uu_tien { get; set; }
 
         [StringLength(10)]
@@ -26,6 +24,9 @@ namespace Model.EF
 
         [StringLength(10)]
         public string ma_danh_muc { get; set; }
+
+        [StringLength(255)]
+        public string tieu_de { get; set; }
 
         public virtual DanhMuc DanhMuc { get; set; }
 
