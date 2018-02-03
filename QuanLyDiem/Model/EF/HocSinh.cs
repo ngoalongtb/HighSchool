@@ -25,8 +25,6 @@ namespace Model.EF
         [Column(TypeName = "date")]
         public DateTime? ngay_sinh { get; set; }
 
-        public bool? da_xoa { get; set; }
-
         [StringLength(10)]
         public string ma_lop_on_dinh { get; set; }
 

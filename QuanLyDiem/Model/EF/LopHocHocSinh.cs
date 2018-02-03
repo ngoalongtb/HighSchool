@@ -23,8 +23,6 @@ namespace Model.EF
 
         public double? diemThi { get; set; }
 
-        public bool? da_xoa { get; set; }
-
         public virtual HocSinh HocSinh { get; set; }
 
         public virtual LopHoc LopHoc { get; set; }

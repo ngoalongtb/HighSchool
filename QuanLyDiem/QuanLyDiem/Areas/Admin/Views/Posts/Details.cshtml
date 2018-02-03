@@ -1,0 +1,61 @@
+﻿@model Model.EF.BaiViet
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/AdminMaster.cshtml";
+}
+
+<section class="content container-fluid">
+    <div class="box box-primary">
+        <div class="box-header with-border">
+            <h3 class="box-title">Chi tiết bài viết</h3>
+        </div>
+        <div>
+            <h4>BaiViet</h4>
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.DanhMuc.ten)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.DanhMuc.ten)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.TaiKhoan.mat_khau)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.TaiKhoan.mat_khau)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.noi_dung)
+                </dt>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.do_uu_tien)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.do_uu_tien)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.hinh_anh)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.hinh_anh)
+                </dd>
+
+            </dl>
+        </div>
+        <div class="box-footer">
+            @Html.ActionLink("Edit", "Edit", new { id = Model.ma }) |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    </div>
+
+</section>

@@ -46,10 +46,18 @@ namespace QuanLyDiem.Areas.Admin.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ma,ten,ngay_sinh,da_xoa,ma_lop_on_dinh,so_dien_thoai,email,url_anh,ngay_nhap_hoc")] HocSinh hocSinh)
+        public ActionResult Create([Bind(Include = "ma,ten,ngay_sinh,ma_lop_on_dinh,so_dien_thoai,email,url_anh,ngay_nhap_hoc")] HocSinh hocSinh)
         {
             if (ModelState.IsValid)
             {
+                if (Request.Files.Count > 0 && Request.Files[0].FileName.Trim() != "")
+                {
+                    string[] _arr = Request.Files[0].FileName.Split('.');
+                    string type = _arr[_arr.Length - 1];
+                    hocSinh.url_anh = hocSinh.ma + "." + type;
+                    Request.Files[0].SaveAs(Server.MapPath("~/Public/upload/student/") + hocSinh.url_anh);
+                }
+
                 db.HocSinhs.Add(hocSinh);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -78,10 +86,18 @@ namespace QuanLyDiem.Areas.Admin.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ma,ten,ngay_sinh,da_xoa,ma_lop_on_dinh,so_dien_thoai,email,url_anh,ngay_nhap_hoc")] HocSinh hocSinh)
+        public ActionResult Edit([Bind(Include = "ma,ten,ngay_sinh,ma_lop_on_dinh,so_dien_thoai,email,url_anh,ngay_nhap_hoc")] HocSinh hocSinh)
         {
             if (ModelState.IsValid)
             {
+                if (Request.Files.Count > 0 && Request.Files[0].FileName.Trim() != "")
+                {
+                    string[] _arr = Request.Files[0].FileName.Split('.');
+                    string type = _arr[_arr.Length - 1];
+                    hocSinh.url_anh = hocSinh.ma + "." + type;
+                    Request.Files[0].SaveAs(Server.MapPath("~/Public/upload/student/") + hocSinh.url_anh);
+                }
+
                 db.Entry(hocSinh).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");

@@ -21,20 +21,10 @@ namespace Model.EF
         public virtual DbSet<LopHocHocSinh> LopHocHocSinhs { get; set; }
         public virtual DbSet<LopOnDinh> LopOnDinhs { get; set; }
         public virtual DbSet<MonHoc> MonHocs { get; set; }
-        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<TaiKhoan> TaiKhoans { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<BaiViet>()
-                .Property(e => e.ma)
-                .IsFixedLength()
-                .IsUnicode(false);
-
-            modelBuilder.Entity<BaiViet>()
-                .Property(e => e.noi_dung)
-                .IsUnicode(false);
-
             modelBuilder.Entity<BaiViet>()
                 .Property(e => e.tai_khoan)
                 .IsFixedLength()
@@ -55,10 +45,6 @@ namespace Model.EF
                 .IsUnicode(false);
 
             modelBuilder.Entity<DanhMuc>()
-                .Property(e => e.ten)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<DanhMuc>()
                 .HasMany(e => e.BaiViets)
                 .WithOptional(e => e.DanhMuc)
                 .HasForeignKey(e => e.ma_danh_muc);
@@ -66,10 +52,6 @@ namespace Model.EF
             modelBuilder.Entity<GiaoVien>()
                 .Property(e => e.ma)
                 .IsFixedLength()
-                .IsUnicode(false);
-
-            modelBuilder.Entity<GiaoVien>()
-                .Property(e => e.ten)
                 .IsUnicode(false);
 
             modelBuilder.Entity<GiaoVien>()
@@ -104,10 +86,6 @@ namespace Model.EF
                 .IsUnicode(false);
 
             modelBuilder.Entity<HocSinh>()
-                .Property(e => e.ten)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<HocSinh>()
                 .Property(e => e.ma_lop_on_dinh)
                 .IsFixedLength()
                 .IsUnicode(false);
@@ -133,10 +111,6 @@ namespace Model.EF
             modelBuilder.Entity<KyHoc>()
                 .Property(e => e.ma)
                 .IsFixedLength()
-                .IsUnicode(false);
-
-            modelBuilder.Entity<KyHoc>()
-                .Property(e => e.ky_hoc)
                 .IsUnicode(false);
 
             modelBuilder.Entity<KyHoc>()
@@ -191,10 +165,6 @@ namespace Model.EF
                 .IsUnicode(false);
 
             modelBuilder.Entity<LopOnDinh>()
-                .Property(e => e.ten)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<LopOnDinh>()
                 .Property(e => e.ma_khoa)
                 .IsFixedLength()
                 .IsUnicode(false);
@@ -215,10 +185,6 @@ namespace Model.EF
                 .IsUnicode(false);
 
             modelBuilder.Entity<MonHoc>()
-                .Property(e => e.ten)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<MonHoc>()
                 .HasMany(e => e.LopHocs)
                 .WithOptional(e => e.MonHoc)
                 .HasForeignKey(e => e.ma_mon_hoc);
@@ -230,10 +196,6 @@ namespace Model.EF
 
             modelBuilder.Entity<TaiKhoan>()
                 .Property(e => e.mat_khau)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<TaiKhoan>()
-                .Property(e => e.ten_hien_thi)
                 .IsUnicode(false);
 
             modelBuilder.Entity<TaiKhoan>()

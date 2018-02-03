@@ -10,14 +10,13 @@ namespace Model.EF
     public partial class BaiViet
     {
         [Key]
-        [StringLength(10)]
-        public string ma { get; set; }
+        public int ma { get; set; }
 
         public string noi_dung { get; set; }
 
-        public int? do_uu_tien { get; set; }
+        public string tieu_de { get; set; }
 
-        public bool? da_xoa { get; set; }
+        public int? do_uu_tien { get; set; }
 
         [StringLength(10)]
         public string tai_khoan { get; set; }

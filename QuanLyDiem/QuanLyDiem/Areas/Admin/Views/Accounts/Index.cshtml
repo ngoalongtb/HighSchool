@@ -24,31 +24,30 @@
             <h3>@Html.ActionLink("Tạo mới", "Create")</h3>
         </div>
         <div>
-            
+
         </div>
         <!-- /.box-header -->
         <div class="box-body">
             <table id="example1" class="table table-bordered table-striped">
                 <thead>
-                    <th>
-                        @Html.DisplayNameFor(model => model.GiaoVien.ten)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.mat_khau)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.ten_hien_thi)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.url_anh)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.da_xoa)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.la_admin)
-                    </th>
-                    <th></th>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.GiaoVien.ten)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.mat_khau)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.ten_hien_thi)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.url_anh)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.la_admin)
+                        </th>
+                        <th></th>
+                    </tr>
                 </thead>
                 <tbody>
                     @foreach (var item in Model)
@@ -67,9 +66,6 @@
                                 @Html.DisplayFor(modelItem => item.url_anh)
                             </td>
                             <td>
-                                @Html.DisplayFor(modelItem => item.da_xoa)
-                            </td>
-                            <td>
                                 @Html.DisplayFor(modelItem => item.la_admin)
                             </td>
                             <td>
@@ -79,6 +75,7 @@
                             </td>
                         </tr>
                     }
+                </tbody>
             </table>
         </div>
         <!-- /.box-body -->
@@ -101,5 +98,3 @@
         });
     </script>
 }
-
-

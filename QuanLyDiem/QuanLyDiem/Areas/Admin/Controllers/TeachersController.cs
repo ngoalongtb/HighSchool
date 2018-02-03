@@ -10,18 +10,18 @@ using Model.EF;
 
 namespace QuanLyDiem.Areas.Admin.Controllers
 {
-    public class TeacherController : Controller
+    public class TeachersController : Controller
     {
         private HighSchool db = new HighSchool();
 
-        // GET: Admin/Teacher
+        // GET: Admin/Teachers
         public ActionResult Index()
         {
             var giaoViens = db.GiaoViens.Include(g => g.TaiKhoan);
             return View(giaoViens.ToList());
         }
 
-        // GET: Admin/Teacher/Details/5
+        // GET: Admin/Teachers/Details/5
         public ActionResult Details(string id)
         {
             if (id == null)
@@ -36,22 +36,29 @@ namespace QuanLyDiem.Areas.Admin.Controllers
             return View(giaoVien);
         }
 
-        // GET: Admin/Teacher/Create
+        // GET: Admin/Teachers/Create
         public ActionResult Create()
         {
             ViewBag.ma = new SelectList(db.TaiKhoans, "tai_khoan", "mat_khau");
             return View();
         }
 
-        // POST: Admin/Teacher/Create
+        // POST: Admin/Teachers/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ma,da_xoa,ten,ngay_sinh,url_anh,so_dien_thoai,email,ngay_vao_truong")] GiaoVien giaoVien)
+        public ActionResult Create([Bind(Include = "ma,ten,ngay_sinh,url_anh,so_dien_thoai,email,ngay_vao_truong")] GiaoVien giaoVien)
         {
             if (ModelState.IsValid)
             {
+                if(Request.Files.Count> 0 && Request.Files[0].FileName.Trim() != "")
+                {
+                    string[] _arr = Request.Files[0].FileName.Split('.');
+                    string type = _arr[_arr.Length - 1];
+                    giaoVien.url_anh = giaoVien.ma + "." + type;
+                    Request.Files[0].SaveAs(Server.MapPath("~/Public/upload/teacher/") + giaoVien.url_anh);
+                }
                 db.GiaoViens.Add(giaoVien);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -61,7 +68,7 @@ namespace QuanLyDiem.Areas.Admin.Controllers
             return View(giaoVien);
         }
 
-        // GET: Admin/Teacher/Edit/5
+        // GET: Admin/Teachers/Edit/5
         public ActionResult Edit(string id)
         {
             if (id == null)
@@ -77,15 +84,23 @@ namespace QuanLyDiem.Areas.Admin.Controllers
             return View(giaoVien);
         }
 
-        // POST: Admin/Teacher/Edit/5
+        // POST: Admin/Teachers/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ma,da_xoa,ten,ngay_sinh,url_anh,so_dien_thoai,email,ngay_vao_truong")] GiaoVien giaoVien)
+        public ActionResult Edit([Bind(Include = "ma,ten,ngay_sinh,url_anh,so_dien_thoai,email,ngay_vao_truong")] GiaoVien giaoVien)
         {
             if (ModelState.IsValid)
             {
+                if (Request.Files.Count > 0 && Request.Files[0].FileName.Trim() != "")
+                {
+                    string[] _arr = Request.Files[0].FileName.Split('.');
+                    string type = _arr[_arr.Length - 1];
+                    giaoVien.url_anh = giaoVien.ma + "." + type;
+                    Request.Files[0].SaveAs(Server.MapPath("~/Public/upload/teacher/") + giaoVien.url_anh);
+                }
+
                 db.Entry(giaoVien).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -94,7 +109,7 @@ namespace QuanLyDiem.Areas.Admin.Controllers
             return View(giaoVien);
         }
 
-        // GET: Admin/Teacher/Delete/5
+        // GET: Admin/Teachers/Delete/5
         public ActionResult Delete(string id)
         {
             if (id == null)
@@ -109,7 +124,7 @@ namespace QuanLyDiem.Areas.Admin.Controllers
             return View(giaoVien);
         }
 
-        // POST: Admin/Teacher/Delete/5
+        // POST: Admin/Teachers/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(string id)

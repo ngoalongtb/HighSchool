@@ -22,8 +22,6 @@ namespace Model.EF
         [StringLength(10)]
         public string ky_hoc { get; set; }
 
-        public bool? da_xoa { get; set; }
-
         [Column(TypeName = "date")]
         public DateTime? bat_dau { get; set; }
 

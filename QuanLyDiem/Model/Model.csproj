@@ -61,7 +61,6 @@
     <Compile Include="EF\LopHocHocSinh.cs" />
     <Compile Include="EF\LopOnDinh.cs" />
     <Compile Include="EF\MonHoc.cs" />
-    <Compile Include="EF\sysdiagram.cs" />
     <Compile Include="EF\TaiKhoan.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

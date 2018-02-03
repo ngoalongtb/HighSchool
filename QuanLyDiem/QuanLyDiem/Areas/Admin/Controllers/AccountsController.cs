@@ -48,7 +48,7 @@ namespace QuanLyDiem.Areas.Admin.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "tai_khoan,mat_khau,ten_hien_thi,url_anh,da_xoa,la_admin")] TaiKhoan taiKhoan)
+        public ActionResult Create([Bind(Include = "tai_khoan,mat_khau,ten_hien_thi,url_anh,la_admin")] TaiKhoan taiKhoan)
         {
             if (ModelState.IsValid)
             {
@@ -82,7 +82,7 @@ namespace QuanLyDiem.Areas.Admin.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "tai_khoan,mat_khau,ten_hien_thi,url_anh,da_xoa,la_admin")] TaiKhoan taiKhoan)
+        public ActionResult Edit([Bind(Include = "tai_khoan,mat_khau,ten_hien_thi,url_anh,la_admin")] TaiKhoan taiKhoan)
         {
             if (ModelState.IsValid)
             {

@@ -20,8 +20,6 @@ namespace Model.EF
         [StringLength(10)]
         public string ma { get; set; }
 
-        public bool? da_xoa { get; set; }
-
         [StringLength(255)]
         public string ten { get; set; }
 

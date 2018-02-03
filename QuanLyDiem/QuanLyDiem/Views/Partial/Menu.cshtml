@@ -1,0 +1,10 @@
+﻿@model IEnumerable<Model.EF.DanhMuc>
+
+<ul class="nav navbar-nav">
+    <li class="active"><a href="/">Trang chủ</a></li>
+    @foreach (var item in Model)
+    {
+        <li><a href="/Categories/@item.ma.Trim()">@item.ten</a></li>
+    }
+    <li><a href="/Contact">Liên hệ</a></li>
+</ul>

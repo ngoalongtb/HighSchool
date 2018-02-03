@@ -8,9 +8,8 @@ use QuanLyDiem
 GO
 CREATE TABLE HocSinh(
 	ma CHAR(10) PRIMARY KEY,
-	ten VARCHAR(255),
+	ten NVARCHAR(255),
 	ngay_sinh DATE,
-	da_xoa BIT, --1: xóa
 	ma_lop_on_dinh CHAR(10),
 	so_dien_thoai VARCHAR(20),
 	email VARCHAR(255),
@@ -20,8 +19,7 @@ CREATE TABLE HocSinh(
 
 CREATE TABLE GiaoVien(
 	ma CHAR(10) PRIMARY KEY,
-	da_xoa BIT, --1: xóa
-	ten VARCHAR(255),
+	ten NVARCHAR(255),
 	ngay_sinh DATE,
 	url_anh VARCHAR(255),
 	so_dien_thoai VARCHAR(20),
@@ -31,30 +29,26 @@ CREATE TABLE GiaoVien(
 CREATE TABLE TaiKhoan(
 	tai_khoan CHAR(10) PRIMARY KEY,
 	mat_khau VARCHAR(255),
-	ten_hien_thi VARCHAR(255),
+	ten_hien_thi NVARCHAR(255),
 	url_anh VARCHAR(255),
-	da_xoa BIT, --1: xóa
 	la_admin BIT -- 1:admin
 )
 
 CREATE TABLE LopOnDinh(
 	ma CHAR(10) PRIMARY KEY,
-	ten VARCHAR(255),
+	ten NVARCHAR(255),
 	ma_khoa CHAR(10),
-	da_xoa BIT, --1: xóa
 	ma_gv_chu_nhiem CHAR(10)
 )
 
 CREATE TABLE MonHoc(
 	ma CHAR(10) PRIMARY KEY,
-	da_xoa BIT, --1: xóa
-	ten VARCHAR(255)
+	ten NVARCHAR(255)
 )
 
 CREATE TABLE KyHoc(
 	ma CHAR(10) PRIMARY KEY,
-	ky_hoc VARCHAR(10),
-	da_xoa BIT, --1: xóa
+	ky_hoc NVARCHAR(10),
 	bat_dau DATE,
 	ket_thuc DATE
 )
@@ -63,7 +57,6 @@ CREATE TABLE LopHoc(
 	ma CHAR(10) PRIMARY KEY,
 	ma_mon_hoc CHAR(10),
 	ma_ky_hoc CHAR(10),
-	da_xoa BIT, --1: xóa
 	ma_giao_vien CHAR(10),
 	ma_lop_on_dinh CHAR(10)
 )
@@ -73,7 +66,6 @@ CREATE TABLE LopHocHocSinh(
 	ma_hoc_sinh CHAR(10),
 	diemTrenLop FLOAT, -- điểm trên lớp
 	diemThi FLOAT, -- điểm thi
-	da_xoa BIT, --1: xóa
 	-- điểm tổng kết khi hiển thị sẽ tính theo 2 điểm trên
 	PRIMARY KEY(ma_lop, ma_hoc_sinh)
 )
@@ -88,19 +80,20 @@ CREATE TABLE LopHocHocSinh(
 
 
 CREATE TABLE BaiViet(
-	ma CHAR(10) PRIMARY KEY,
-	noi_dung VARCHAR(MAX),
+	ma INT IDENTITY PRIMARY KEY,
+	noi_dung NVARCHAR(MAX),
+	tieu_de NVARCHAR(255),
 	do_uu_tien INT, -- độ ưu tiên hiển thị
-	da_xoa BIT, --1: xóa
 	tai_khoan CHAR(10),
 	hinh_anh VARCHAR(255),
 	ma_danh_muc CHAR(10)
 	--thoi_gian DATETIME : pro
 )
 GO
+
 CREATE TABLE DanhMuc(
 	ma CHAR(10) PRIMARY KEY,
-	ten VARCHAR(255)
+	ten NVARCHAR(255)
 )
 
 --CREATE TABLE BinhLuan(
@@ -142,6 +135,3 @@ ADD FOREIGN KEY(ma_danh_muc) REFERENCES DanhMuc(ma)
 --ADD FOREIGN KEY(ma_bai_viet) REFERENCES BaiViet(ma)
 --ALTER TABLE BinhLuan
 --ADD FOREIGN KEY(tai_khoan) REFERENCES TaiKhoan(tai_khoan)
-
-
-

@@ -1,0 +1,86 @@
+﻿@model Model.EF.GiaoVien
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Areas/Admin/Views/Shared/AdminMaster.cshtml";
+}
+
+<section class="content container-fluid">
+    <div class="box box-primary">
+        <div class="box-header with-border">
+            <h3 class="box-title">Bạn có thực sự muốn xóa</h3>
+        </div>
+        <div>
+            <h4>Giáo viên</h4>
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.TaiKhoan.mat_khau)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.TaiKhoan.mat_khau)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.ten)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.ten)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.ngay_sinh)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.ngay_sinh)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.url_anh)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.url_anh)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.so_dien_thoai)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.so_dien_thoai)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.email)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.email)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.ngay_vao_truong)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.ngay_vao_truong)
+                </dd>
+
+            </dl>
+
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-actions no-color">
+                    <input type="submit" value="Delete" class="btn btn-default" /> |
+                    @Html.ActionLink("Back to List", "Index")
+                </div>
+            }
+        </div>
+    </div>
+</section>

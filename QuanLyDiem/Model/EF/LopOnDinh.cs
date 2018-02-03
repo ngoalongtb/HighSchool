@@ -25,8 +25,6 @@ namespace Model.EF
         [StringLength(10)]
         public string ma_khoa { get; set; }
 
-        public bool? da_xoa { get; set; }
-
         [StringLength(10)]
         public string ma_gv_chu_nhiem { get; set; }
 

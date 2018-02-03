@@ -33,17 +33,13 @@
 
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <div class="container">
-                    <ul class="nav navbar-nav">
-                        <li class="active"><a href="#">Trang chủ</a></li>
-                        <li><a href="#gioithieu">Giới thiệu</a></li>
-                        <li><a href="#tintuc">Tin tức</a></li>
-                        <li><a href="#dhs">Dành cho học sinh</a></li>
-                        <li><a href="#">Tư liệu dạy-học</a></li>
-                        <li><a href="#daynong">Đường dây nóng</a></li>
-                        <li><a href="#">Góc thư giãn</a></li>
-                        <li><a href="#ntvt">Người tốt việc tốt</a></li>
-                        <li><a href="#">Liên hệ</a></li>
-                    </ul>
+                    <div class="menu">
+                        <ul class="nav navbar-nav">
+                            <li class="active"><a href="#">Trang chủ</a></li>
+                            <li><a href="#gioithieu">Giới thiệu</a></li>
+                            <li><a href="#">Liên hệ</a></li>
+                        </ul>
+                    </div>
                 </div>
 
                 <!-- <form class="navbar-form navbar-left" role="search">
@@ -108,9 +104,9 @@
                 </div>
 
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4" id="news">
                 <ul class="ds">
-                    <h2 class="tintuc">Tin đọc nhiều</h2>
+                    <h2 class="tintuc">Tin mới</h2>
                     <div class="border-to"></div>
                     <div class="border-be"></div>
 
@@ -222,17 +218,13 @@
 
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <div class="container">
-                    <ul class="nav navbar-nav">
-                        <li class="active"><a href="#">Trang chủ</a></li>
-                        <li><a href="#">Giới thiệu</a></li>
-                        <li><a href="#">Tin tức</a></li>
-                        <li><a href="#">Dành cho học sinh</a></li>
-                        <li><a href="#">Tư liệu dạy-học</a></li>
-                        <li><a href="#">Đường dây nóng</a></li>
-                        <li><a href="#">Góc thư giãn</a></li>
-                        <li><a href="#">Người tốt việc tốt</a></li>
-                        <li><a href="#">Liên hệ</a></li>
-                    </ul>
+                    <div class="menu">
+                        <ul class="nav navbar-nav">
+                            <li class="active"><a href="#">Trang chủ</a></li>
+                            <li><a href="#">Giới thiệu</a></li>
+                            <li><a href="#">Liên hệ</a></li>
+                        </ul>
+                    </div>
                 </div>
 
                 <!-- <form class="navbar-form navbar-left" role="search">
@@ -273,5 +265,10 @@
             </div>
         </div>
     </div>
+
+    <script>
+    $('.menu').load("/Partial/Menu")
+    </script>
 </body>
 </html>
+

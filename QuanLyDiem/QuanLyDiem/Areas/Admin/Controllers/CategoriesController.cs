@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Model.EF;
+using QuanLyDiem.Areas.Admin.Models;
 
 namespace QuanLyDiem.Areas.Admin.Controllers
 {
@@ -17,6 +18,7 @@ namespace QuanLyDiem.Areas.Admin.Controllers
         // GET: Admin/Categories
         public ActionResult Index()
         {
+            ViewBag.Message = TempData["Message"];
             return View(db.DanhMucs.ToList());
         }
 
@@ -109,10 +111,20 @@ namespace QuanLyDiem.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(string id)
         {
-            DanhMuc danhMuc = db.DanhMucs.Find(id);
-            db.DanhMucs.Remove(danhMuc);
-            db.SaveChanges();
-            return RedirectToAction("Index");
+            try
+            {
+                DanhMuc danhMuc = db.DanhMucs.Find(id);
+                db.DanhMucs.Remove(danhMuc);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            catch (Exception)
+            {
+                Message message = new Message("alert", "Không thể xóa do bảng danh mục tồn tại bài viết");
+                TempData["Message"] = message;
+                return RedirectToAction("");
+            }
+            
         }
 
         protected override void Dispose(bool disposing)
