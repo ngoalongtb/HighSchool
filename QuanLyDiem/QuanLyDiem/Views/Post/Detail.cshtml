@@ -1,0 +1,17 @@
+﻿@model Model.EF.BaiViet
+
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/HomeMaster.cshtml";
+}
+
+<h3 class="tt" id="gioithieu">@Model.tieu_de</h3>
+<div class="border-too"></div>
+<div class="text-center" style="margin-top:30px;">
+    <img src="~/Public/upload/post/@Model.hinh_anh" align="middle"/>
+</div>
+<div class="row text-center" style="margin-top:30px;">
+    <div class="col-md-12">
+        @Html.Raw(@Model.noi_dung)
+    </div>
+</div>

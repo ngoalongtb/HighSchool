@@ -20,5 +20,10 @@ namespace QuanLyDiem.Controllers
             List<DanhMuc> categories = db.DanhMucs.ToList();
             return View(categories);
         }
+        public ActionResult News()
+        {
+            List<BaiViet> posts = db.BaiViets.OrderByDescending(x => x.do_uu_tien).Take(7).ToList();
+            return View(posts);
+        }
     }
 }

@@ -7,14 +7,20 @@ using System.Web.Mvc;
 
 namespace QuanLyDiem.Controllers
 {
-    public class HomeController : Controller
+    public class PostController : Controller
     {
         public HighSchool db = new HighSchool();
-        // GET: Home
+        // GET: Post
         public ActionResult Index()
         {
-            List<DanhMuc> categories = db.DanhMucs.ToList();
-            return View(categories);
+            return View();
+        }
+
+        // GET: Detail
+        public ActionResult Detail(int id)
+        {
+            BaiViet bv = db.BaiViets.Find(id);
+            return View(bv);
         }
     }
 }

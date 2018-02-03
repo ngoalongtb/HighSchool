@@ -1,0 +1,23 @@
+﻿@model IEnumerable<Model.EF.BaiViet>
+
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/HomeMaster.cshtml";
+}
+
+<h3 class="tt" id="gioithieu">@ViewBag.CategoryName</h3>
+<div class="border-too"></div>
+
+
+@foreach (var item in Model)
+{
+    <div class="row">
+        <div class="col-md-4">
+            <img class="anh" src="~/public/upload/post/@item.hinh_anh" alt="">
+        </div>
+        <div class="col-md-8">
+            <h5><a href="/Post/Detail/@item.ma">@item.tieu_de</a></h5>
+        </div>
+    </div>
+}
+

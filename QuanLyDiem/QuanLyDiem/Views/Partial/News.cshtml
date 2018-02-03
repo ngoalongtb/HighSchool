@@ -1,0 +1,11 @@
+﻿@model IEnumerable<Model.EF.BaiViet>
+
+<h2 class="tintuc">Tin nổi bật</h2>
+<div class="border-to"></div>
+<div class="border-be"></div>
+<ul class="ds">
+    @foreach (var item in Model)
+    {
+        <li><a href="/Post/@item.ma">@item.tieu_de</a></li>
+    }
+</ul>
