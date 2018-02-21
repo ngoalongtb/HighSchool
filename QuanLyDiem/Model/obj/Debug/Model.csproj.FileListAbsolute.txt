@@ -8,3 +8,13 @@ C:\DATA\WORKSHOP\tuananh\QuanLyDiem\Model\bin\Debug\EntityFramework.SqlServer.xm
 C:\DATA\WORKSHOP\tuananh\QuanLyDiem\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
 C:\DATA\WORKSHOP\tuananh\QuanLyDiem\Model\obj\Debug\Model.dll
 C:\DATA\WORKSHOP\tuananh\QuanLyDiem\Model\obj\Debug\Model.pdb
+E:\WORKSHOP\HighSchool\QuanLyDiem\Model\bin\Debug\Model.dll.config
+E:\WORKSHOP\HighSchool\QuanLyDiem\Model\bin\Debug\Model.dll
+E:\WORKSHOP\HighSchool\QuanLyDiem\Model\bin\Debug\Model.pdb
+E:\WORKSHOP\HighSchool\QuanLyDiem\Model\bin\Debug\EntityFramework.dll
+E:\WORKSHOP\HighSchool\QuanLyDiem\Model\bin\Debug\EntityFramework.SqlServer.dll
+E:\WORKSHOP\HighSchool\QuanLyDiem\Model\bin\Debug\EntityFramework.xml
+E:\WORKSHOP\HighSchool\QuanLyDiem\Model\bin\Debug\EntityFramework.SqlServer.xml
+E:\WORKSHOP\HighSchool\QuanLyDiem\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
+E:\WORKSHOP\HighSchool\QuanLyDiem\Model\obj\Debug\Model.dll
+E:\WORKSHOP\HighSchool\QuanLyDiem\Model\obj\Debug\Model.pdb
