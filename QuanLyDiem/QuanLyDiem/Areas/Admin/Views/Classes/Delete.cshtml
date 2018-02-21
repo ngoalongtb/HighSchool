@@ -1,0 +1,62 @@
+﻿@model Model.EF.LopHoc
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Areas/Admin/Views/Shared/AdminMaster.cshtml";
+}
+
+<section class="content container-fluid">
+    <div class="box box-primary">
+        <div class="box-header with-border">
+            <h3 class="box-title">Bạn có thực sự muốn xóa</h3>
+        </div>
+        <div>
+            <h4>Lớp học</h4>
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.GiaoVien.ten)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.GiaoVien.ten)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.KyHoc.ky_hoc)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.KyHoc.ky_hoc)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.LopOnDinh.ten)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.LopOnDinh.ten)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.MonHoc.ten)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.MonHoc.ten)
+                </dd>
+
+            </dl>
+
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-actions no-color">
+                    <input type="submit" value="Delete" class="btn btn-default" /> |
+                    @Html.ActionLink("Back to List", "Index")
+                </div>
+            }
+        </div>
+    </div>
+</section>

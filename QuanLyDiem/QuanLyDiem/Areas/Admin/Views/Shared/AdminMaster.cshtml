@@ -1,6 +1,10 @@
 ﻿
 @{
     Layout = null;
+    Model.EF.TaiKhoan loginAccount = (Model.EF.TaiKhoan)Session["LoginAccount"];
+    if (loginAccount == null) {
+        loginAccount = new Model.EF.TaiKhoan();
+    }
 }
 
 <!DOCTYPE html>
@@ -92,7 +96,7 @@ desired effect
                                         <a href="#" class="btn btn-default btn-flat">Profile</a>
                                     </div>
                                     <div class="pull-right">
-                                        <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                                        <a href="/Login/Logout" class="btn btn-default btn-flat">Sign out</a>
                                     </div>
                                 </li>
                             </ul>
@@ -135,54 +139,57 @@ desired effect
                     <li class="header">Menu</li>
                     <!-- Optionally, you can add icons to the links -->
                     <li><a href="#"><i class="fa fa-link"></i> <span>Dashboard</span></a></li>
-                    <li class="treeview">
-                        <a href="#">
-                            <i class="fa fa-link"></i> <span>Tài khoản</span>
-                            <span class="pull-right-container">
-                                <i class="fa fa-angle-left pull-right"></i>
-                            </span>
-                        </a>
-                        <ul class="treeview-menu">
-                            <li><a href="/Admin/Accounts/Index">Danh sách</a></li>
-                            <li><a href="/Admin/Accounts/Create">Thêm mới</a></li>
-                        </ul>
-                    </li>
-                    <li class="treeview">
-                        <a href="#">
-                            <i class="fa fa-link"></i> <span>Giáo viên</span>
-                            <span class="pull-right-container">
-                                <i class="fa fa-angle-left pull-right"></i>
-                            </span>
-                        </a>
-                        <ul class="treeview-menu">
-                            <li><a href="/Admin/Teachers/Index">Danh sách</a></li>
-                            <li><a href="/Admin/Teachers/Create">Thêm mới</a></li>
-                        </ul>
-                    </li>
-                    <li class="treeview">
-                        <a href="#">
-                            <i class="fa fa-link"></i> <span>Học sinh</span>
-                            <span class="pull-right-container">
-                                <i class="fa fa-angle-left pull-right"></i>
-                            </span>
-                        </a>
-                        <ul class="treeview-menu">
-                            <li><a href="/Admin/Students/Index">Danh sách</a></li>
-                            <li><a href="/Admin/Students/Create">Thêm mới</a></li>
-                        </ul>
-                    </li>
-                    <li class="treeview">
-                        <a href="#">
-                            <i class="fa fa-link"></i> <span>Danh mục</span>
-                            <span class="pull-right-container">
-                                <i class="fa fa-angle-left pull-right"></i>
-                            </span>
-                        </a>
-                        <ul class="treeview-menu">
-                            <li><a href="/Admin/Categories/Index">Danh sách</a></li>
-                            <li><a href="/Admin/Categories/Create">Thêm mới</a></li>
-                        </ul>
-                    </li>
+                    @if (loginAccount.la_admin == true)
+                    {
+                        <li class="treeview">
+                            <a href="#">
+                                <i class="fa fa-link"></i> <span>Tài khoản</span>
+                                <span class="pull-right-container">
+                                    <i class="fa fa-angle-left pull-right"></i>
+                                </span>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="/Admin/Accounts/Index">Danh sách</a></li>
+                                <li><a href="/Admin/Accounts/Create">Thêm mới</a></li>
+                            </ul>
+                        </li>
+                        <li class="treeview">
+                            <a href="#">
+                                <i class="fa fa-link"></i> <span>Giáo viên</span>
+                                <span class="pull-right-container">
+                                    <i class="fa fa-angle-left pull-right"></i>
+                                </span>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="/Admin/Teachers/Index">Danh sách</a></li>
+                                <li><a href="/Admin/Teachers/Create">Thêm mới</a></li>
+                            </ul>
+                        </li>
+                        <li class="treeview">
+                            <a href="#">
+                                <i class="fa fa-link"></i> <span>Học sinh</span>
+                                <span class="pull-right-container">
+                                    <i class="fa fa-angle-left pull-right"></i>
+                                </span>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="/Admin/Students/Index">Danh sách</a></li>
+                                <li><a href="/Admin/Students/Create">Thêm mới</a></li>
+                            </ul>
+                        </li>
+                        <li class="treeview">
+                            <a href="#">
+                                <i class="fa fa-link"></i> <span>Danh mục</span>
+                                <span class="pull-right-container">
+                                    <i class="fa fa-angle-left pull-right"></i>
+                                </span>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="/Admin/Categories/Index">Danh sách</a></li>
+                                <li><a href="/Admin/Categories/Create">Thêm mới</a></li>
+                            </ul>
+                        </li>
+                    }
                     <li class="treeview">
                         <a href="#">
                             <i class="fa fa-link"></i> <span>Bài viết</span>
@@ -197,14 +204,26 @@ desired effect
                     </li>
                     <li class="treeview">
                         <a href="#">
+                            <i class="fa fa-link"></i> <span>Kỳ học</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="/Admin/Semesters/Index">Danh sách</a></li>
+                            <li><a href="/Admin/Semesters/Create">Thêm mới</a></li>
+                        </ul>
+                    </li>
+                    <li class="treeview">
+                        <a href="#">
                             <i class="fa fa-link"></i> <span>Môn học</span>
                             <span class="pull-right-container">
                                 <i class="fa fa-angle-left pull-right"></i>
                             </span>
                         </a>
                         <ul class="treeview-menu">
-                            <li><a href="#">Danh sách</a></li>
-                            <li><a href="#">Thêm mới</a></li>
+                            <li><a href="/Admin/Subjects/Index">Danh sách</a></li>
+                            <li><a href="/Admin/Subjects/Create">Thêm mới</a></li>
                         </ul>
                     </li>
                     <li class="treeview">
@@ -215,8 +234,8 @@ desired effect
                             </span>
                         </a>
                         <ul class="treeview-menu">
-                            <li><a href="#">Danh sách</a></li>
-                            <li><a href="#">Thêm mới</a></li>
+                            <li><a href="/Admin/MainClasses/Index">Danh sách</a></li>
+                            <li><a href="/Admin/MainClasses/Create">Thêm mới</a></li>
                         </ul>
                     </li>
                 </ul>

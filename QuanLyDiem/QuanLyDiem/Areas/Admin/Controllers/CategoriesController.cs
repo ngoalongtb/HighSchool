@@ -11,7 +11,7 @@ using QuanLyDiem.Areas.Admin.Models;
 
 namespace QuanLyDiem.Areas.Admin.Controllers
 {
-    public class CategoriesController : Controller
+    public class CategoriesController : BaseController
     {
         private HighSchool db = new HighSchool();
 

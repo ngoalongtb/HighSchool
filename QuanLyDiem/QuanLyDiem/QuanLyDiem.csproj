@@ -199,12 +199,17 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\AccountsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\BaseController.cs" />
     <Compile Include="Areas\Admin\Controllers\CategoriesController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ClassesController.cs" />
     <Compile Include="Areas\Admin\Controllers\DashboardController.cs" />
+    <Compile Include="Areas\Admin\Controllers\MainClassesController.cs" />
     <Compile Include="Areas\Admin\Controllers\PostsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\SemestersController.cs" />
     <Compile Include="Areas\Admin\Controllers\StudentsController.cs" />
     <Compile Include="Areas\Admin\Controllers\SubjectsController.cs" />
     <Compile Include="Areas\Admin\Controllers\TeachersController.cs" />
+    <Compile Include="Areas\Admin\Models\DashboardModel.cs" />
     <Compile Include="Areas\Admin\Models\Message.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
@@ -7589,6 +7594,22 @@
     <Content Include="Areas\Admin\Views\Teachers\Details.cshtml" />
     <Content Include="Areas\Admin\Views\Teachers\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Teachers\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Semesters\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Semesters\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Semesters\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Semesters\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Semesters\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Classes\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Classes\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Classes\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Classes\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Classes\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\MainClasses\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\MainClasses\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\MainClasses\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\MainClasses\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\MainClasses\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\MainClasses\ListStudents.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -7621,6 +7642,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Admin\Views\Base\" />
     <Folder Include="Public\upload\post\" />
     <Folder Include="Public\upload\student\" />
     <Folder Include="Public\upload\teacher\" />

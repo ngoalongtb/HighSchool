@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Model.EF.DanhMuc>
+﻿@model IEnumerable<Model.EF.LopOnDinh>
 
 @{
     ViewBag.Title = "Index";
@@ -8,9 +8,10 @@
 <section class="content container-fluid">
     <div class="box">
         <div class="box-header">
-            <h3 class="box-title">Danh sách danh mục</h3>
+            <h3 class="box-title">Danh sách lớp ổn định</h3>
             <h3>@Html.ActionLink("Tạo mới", "Create")</h3>
-            @if (ViewBag.Message != null) {
+            @if (ViewBag.Message != null)
+            {
                 <div class="alert alert-danger alert-dismissible">
                     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
                     <h4><i class="icon fa fa-ban"></i>@ViewBag.Message.type</h4>
@@ -18,29 +19,46 @@
                 </div>
             }
         </div>
-        
+
         <!-- /.box-header -->
         <div class="box-body">
             <table id="example1" class="table table-bordered table-hover">
                 <thead>
                     <tr>
                         <th>
+                            @Html.DisplayNameFor(model => model.GiaoVien.ten)
+                        </th>
+                        <th>
                             @Html.DisplayNameFor(model => model.ten)
                         </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.ma_khoa)
+                        </th>
                         <th></th>
+                        <th>Danh sách lớp</th>
                     </tr>
-                    </thead>
+                </thead>
                 <tbody>
                     @foreach (var item in Model)
                     {
+
                         <tr>
                             <td>
+                                @Html.DisplayFor(modelItem => item.GiaoVien.ten)
+                            </td>
+                            <td>
                                 @Html.DisplayFor(modelItem => item.ten)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ma_khoa)
                             </td>
                             <td>
                                 @Html.ActionLink("Edit", "Edit", new { id = item.ma.Trim() }) |
                                 @Html.ActionLink("Details", "Details", new { id = item.ma.Trim() }) |
                                 @Html.ActionLink("Delete", "Delete", new { id = item.ma.Trim() })
+                            </td>
+                            <td>
+                                @Html.ActionLink("List", "ListStudents", new { id = item.ma.Trim() })
                             </td>
                         </tr>
                     }

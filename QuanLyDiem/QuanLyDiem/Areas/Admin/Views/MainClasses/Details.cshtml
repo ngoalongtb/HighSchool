@@ -1,0 +1,49 @@
+﻿@model Model.EF.LopOnDinh
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/AdminMaster.cshtml";
+}
+
+<section class="content container-fluid">
+    <div class="box box-primary">
+        <div class="box-header with-border">
+            <h3 class="box-title">Chi tiết lớp ổn định</h3>
+        </div>
+
+        <div>
+            <h4>Lớp ổn định</h4>
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.GiaoVien.ten)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.GiaoVien.ten)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.ten)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.ten)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.ma_khoa)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.ma_khoa)
+                </dd>
+
+            </dl>
+        </div>
+        <div class="box-footer">
+            @Html.ActionLink("Edit", "Edit", new { id = Model.ma.Trim() }) |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    </div>
+</section>

@@ -1,4 +1,4 @@
-﻿@model Model.EF.DanhMuc
+﻿@model Model.EF.LopOnDinh
 
 @{
     ViewBag.Title = "Delete";
@@ -11,15 +11,31 @@
             <h3 class="box-title">Bạn có thực sự muốn xóa</h3>
         </div>
         <div>
-            <h4>Danh mục</h4>
+            <h4>Lớp ổn định</h4>
             <hr />
             <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.GiaoVien.ten)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.GiaoVien.ten)
+                </dd>
+
                 <dt>
                     @Html.DisplayNameFor(model => model.ten)
                 </dt>
 
                 <dd>
                     @Html.DisplayFor(model => model.ten)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.ma_khoa)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.ma_khoa)
                 </dd>
 
             </dl>

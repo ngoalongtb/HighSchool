@@ -34,5 +34,10 @@ namespace QuanLyDiem.Controllers
                 return RedirectToAction("Index");
             }
         }
+        public ActionResult Logout()
+        {
+            Session.Remove("LoginAccount");
+            return Redirect("/");
+        }
     }
 }

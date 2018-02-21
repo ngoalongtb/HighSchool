@@ -10,124 +10,107 @@ using Model.EF;
 
 namespace QuanLyDiem.Areas.Admin.Controllers
 {
-    public class StudentsController : BaseController
+    public class SemestersController : Controller
     {
         private HighSchool db = new HighSchool();
 
-        // GET: Admin/Students
+        // GET: Admin/Semesters
         public ActionResult Index()
         {
-            return View(db.HocSinhs.ToList());
+            return View(db.KyHocs.ToList());
         }
 
-        // GET: Admin/Students/Details/5
+        // GET: Admin/Semesters/Details/5
         public ActionResult Details(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            HocSinh hocSinh = db.HocSinhs.Find(id);
-            if (hocSinh == null)
+            KyHoc kyHoc = db.KyHocs.Find(id);
+            if (kyHoc == null)
             {
                 return HttpNotFound();
             }
-            return View(hocSinh);
+            return View(kyHoc);
         }
 
-        // GET: Admin/Students/Create
+        // GET: Admin/Semesters/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Admin/Students/Create
+        // POST: Admin/Semesters/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ma,ten,ngay_sinh,ma_lop_on_dinh,so_dien_thoai,email,url_anh,ngay_nhap_hoc")] HocSinh hocSinh)
+        public ActionResult Create([Bind(Include = "ma,ky_hoc,bat_dau,ket_thuc")] KyHoc kyHoc)
         {
             if (ModelState.IsValid)
             {
-                if (Request.Files.Count > 0 && Request.Files[0].FileName.Trim() != "")
-                {
-                    string[] _arr = Request.Files[0].FileName.Split('.');
-                    string type = _arr[_arr.Length - 1];
-
-                    hocSinh.url_anh = hocSinh.ma + "." + type;
-                    Request.Files[0].SaveAs(Server.MapPath("~/Public/upload/student/") + hocSinh.url_anh);
-                }
-
-                db.HocSinhs.Add(hocSinh);
+                db.KyHocs.Add(kyHoc);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(hocSinh);
+            return View(kyHoc);
         }
 
-        // GET: Admin/Students/Edit/5
+        // GET: Admin/Semesters/Edit/5
         public ActionResult Edit(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            HocSinh hocSinh = db.HocSinhs.Find(id);
-            if (hocSinh == null)
+            KyHoc kyHoc = db.KyHocs.Find(id);
+            if (kyHoc == null)
             {
                 return HttpNotFound();
             }
-            return View(hocSinh);
+            return View(kyHoc);
         }
 
-        // POST: Admin/Students/Edit/5
+        // POST: Admin/Semesters/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ma,ten,ngay_sinh,ma_lop_on_dinh,so_dien_thoai,email,url_anh,ngay_nhap_hoc")] HocSinh hocSinh)
+        public ActionResult Edit([Bind(Include = "ma,ky_hoc,bat_dau,ket_thuc")] KyHoc kyHoc)
         {
             if (ModelState.IsValid)
             {
-                if (Request.Files.Count > 0 && Request.Files[0].FileName.Trim() != "")
-                {
-                    string[] _arr = Request.Files[0].FileName.Split('.');
-                    string type = _arr[_arr.Length - 1];
-                    hocSinh.url_anh = hocSinh.ma + "." + type;
-                    Request.Files[0].SaveAs(Server.MapPath("~/Public/upload/student/") + hocSinh.url_anh);
-                }
-
-                db.Entry(hocSinh).State = EntityState.Modified;
+                db.Entry(kyHoc).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(hocSinh);
+            return View(kyHoc);
         }
 
-        // GET: Admin/Students/Delete/5
+        // GET: Admin/Semesters/Delete/5
         public ActionResult Delete(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            HocSinh hocSinh = db.HocSinhs.Find(id);
-            if (hocSinh == null)
+            KyHoc kyHoc = db.KyHocs.Find(id);
+            if (kyHoc == null)
             {
                 return HttpNotFound();
             }
-            return View(hocSinh);
+            return View(kyHoc);
         }
 
-        // POST: Admin/Students/Delete/5
+        // POST: Admin/Semesters/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(string id)
         {
-            HocSinh hocSinh = db.HocSinhs.Find(id);
-            db.HocSinhs.Remove(hocSinh);
+            KyHoc kyHoc = db.KyHocs.Find(id);
+            db.KyHocs.Remove(kyHoc);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

@@ -10,7 +10,7 @@ using Model.EF;
 
 namespace QuanLyDiem.Areas.Admin.Controllers
 {
-    public class AccountsController : Controller
+    public class AccountsController : BaseController
     {
         private HighSchool db = new HighSchool();
 
