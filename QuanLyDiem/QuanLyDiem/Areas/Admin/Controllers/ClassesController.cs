@@ -64,6 +64,9 @@ namespace QuanLyDiem.Areas.Admin.Controllers
             ViewBag.ma_ky_hoc = new SelectList(db.KyHocs, "ma", "ky_hoc", lopHoc.ma_ky_hoc);
             ViewBag.ma_lop_on_dinh = new SelectList(db.LopOnDinhs, "ma", "ten", lopHoc.ma_lop_on_dinh);
             ViewBag.ma_mon_hoc = new SelectList(db.MonHocs, "ma", "ten", lopHoc.ma_mon_hoc);
+
+
+
             return View(lopHoc);
         }
 
@@ -130,6 +133,11 @@ namespace QuanLyDiem.Areas.Admin.Controllers
             db.LopHocs.Remove(lopHoc);
             db.SaveChanges();
             return RedirectToAction("Index");
+        }
+        public ActionResult ScoreManager(string id)
+        {
+            List<LopHocHocSinh> model = db.LopHocHocSinhs.Where(x=>x.ma_lop == id).ToList();
+            return View();
         }
 
         protected override void Dispose(bool disposing)

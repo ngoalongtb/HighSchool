@@ -7,7 +7,7 @@
 <section class="content container-fluid">
     <div class="box">
         <div class="box-header">
-            <h3 class="box-title">Danh sách danh mục</h3>
+            <h3 class="box-title">Danh sách lớp học</h3>
             <h3>@Html.ActionLink("Tạo mới", "Create")</h3>
             @if (ViewBag.Message != null)
             {
@@ -37,6 +37,7 @@
                             @Html.DisplayNameFor(model => model.MonHoc.ten)
                         </th>
                         <th></th>
+                        <th>Quản lý điểm</th>
                     </tr>
                 </thead>
 
@@ -57,10 +58,11 @@
                                 @Html.DisplayFor(modelItem => item.MonHoc.ten)
                             </td>
                             <td>
-                                @Html.ActionLink("Edit", "Edit", new { id = item.ma }) |
-                                @Html.ActionLink("Details", "Details", new { id = item.ma }) |
-                                @Html.ActionLink("Delete", "Delete", new { id = item.ma })
+                                @Html.ActionLink("Edit", "Edit", new { id = item.ma.Trim() }) |
+                                @Html.ActionLink("Details", "Details", new { id = item.ma.Trim() }) |
+                                @Html.ActionLink("Delete", "Delete", new { id = item.ma.Trim() })
                             </td>
+                            <td>@Html.ActionLink("Quản lý điểm", "ScoreManager", new { id = item.ma.Trim() })</td>
                         </tr>
                     </tbody>
                 }
