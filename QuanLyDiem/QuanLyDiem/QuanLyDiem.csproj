@@ -218,6 +218,7 @@
     <Compile Include="Controllers\PartialController.cs" />
     <Compile Include="Controllers\PostController.cs" />
     <Compile Include="Controllers\RegisterController.cs" />
+    <Compile Include="Controllers\UtilitiesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -7610,6 +7611,8 @@
     <Content Include="Areas\Admin\Views\MainClasses\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\MainClasses\Index.cshtml" />
     <Content Include="Areas\Admin\Views\MainClasses\ListStudents.cshtml" />
+    <Content Include="Areas\Admin\Views\Classes\ScoreManager.cshtml" />
+    <Content Include="Areas\Admin\Views\Classes\EnterScore.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -7639,10 +7642,13 @@
     <Content Include="Views\Contact\Index.cshtml" />
     <Content Include="Views\Category\Detail.cshtml" />
     <Content Include="Views\Post\Detail.cshtml" />
+    <Content Include="Views\Utilities\Teachers.cshtml" />
+    <Content Include="Views\Utilities\Students.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Views\Base\" />
+    <Folder Include="Areas\Admin\Views\Utilities\" />
     <Folder Include="Public\upload\post\" />
     <Folder Include="Public\upload\student\" />
     <Folder Include="Public\upload\teacher\" />

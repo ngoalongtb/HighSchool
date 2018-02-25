@@ -38,6 +38,7 @@ namespace QuanLyDiem.Areas.Admin.Controllers
         // GET: Admin/Students/Create
         public ActionResult Create()
         {
+            ViewBag.ma_lop_on_dinh = new SelectList(db.LopOnDinhs, "ma", "ten");
             return View();
         }
 
@@ -70,6 +71,7 @@ namespace QuanLyDiem.Areas.Admin.Controllers
         // GET: Admin/Students/Edit/5
         public ActionResult Edit(string id)
         {
+            ViewBag.ma_lop_on_dinh = new SelectList(db.LopOnDinhs, "ma", "ten");
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);

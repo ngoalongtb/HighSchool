@@ -137,7 +137,29 @@ namespace QuanLyDiem.Areas.Admin.Controllers
         public ActionResult ScoreManager(string id)
         {
             List<LopHocHocSinh> model = db.LopHocHocSinhs.Where(x=>x.ma_lop == id).ToList();
-            return View();
+            var _class = db.LopHocs.Find(id);
+            ViewBag.ClassMessage = _class.MonHoc.ten + "   " + _class.LopOnDinh.ten;
+            return View(model);
+        }
+
+        public ActionResult EnterScore()
+        {
+            string maHS = Request.Params["maHS"];
+            string maLop = Request.Params["maLop"];
+            LopHocHocSinh model = new LopHocHocSinh();
+            model.ma_lop = maLop;
+            model.ma_hoc_sinh = maHS;
+            return View(model);
+        }
+
+        [HttpPost]
+        public ActionResult EnterScore(LopHocHocSinh lopHocHocSinh)
+        {
+            var _lopHocHocSinh = db.LopHocHocSinhs.SingleOrDefault(x=>x.ma_lop == lopHocHocSinh.ma_lop && x.ma_hoc_sinh == lopHocHocSinh.ma_hoc_sinh);
+            _lopHocHocSinh.diemThi = lopHocHocSinh.diemThi;
+            _lopHocHocSinh.diemTrenLop = lopHocHocSinh.diemTrenLop;
+            db.SaveChanges();
+            return Redirect("~/Admin/Classes/ScoreManager/" + lopHocHocSinh.ma_lop);
         }
 
         protected override void Dispose(bool disposing)
