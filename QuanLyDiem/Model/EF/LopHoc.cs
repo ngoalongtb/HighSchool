@@ -1,4 +1,4 @@
-namespace Model.EF
+﻿namespace Model.EF
 {
     using System;
     using System.Collections.Generic;
@@ -17,18 +17,23 @@ namespace Model.EF
 
         [Key]
         [StringLength(10)]
+        [Display(Name = "Mã")]
         public string ma { get; set; }
 
         [StringLength(10)]
+        [Display(Name = "Mã môn học")]
         public string ma_mon_hoc { get; set; }
 
         [StringLength(10)]
+        [Display(Name = "Mã kỳ học")]
         public string ma_ky_hoc { get; set; }
 
         [StringLength(10)]
+        [Display(Name = "Mã giáo viên")]
         public string ma_giao_vien { get; set; }
 
         [StringLength(10)]
+        [Display(Name = "Mã lớp ổn định")]
         public string ma_lop_on_dinh { get; set; }
 
         public virtual GiaoVien GiaoVien { get; set; }

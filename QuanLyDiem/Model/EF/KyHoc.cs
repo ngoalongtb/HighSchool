@@ -1,4 +1,4 @@
-namespace Model.EF
+﻿namespace Model.EF
 {
     using System;
     using System.Collections.Generic;
@@ -17,15 +17,19 @@ namespace Model.EF
 
         [Key]
         [StringLength(10)]
+        [Display(Name = "Mã")]
         public string ma { get; set; }
 
         [StringLength(10)]
+        [Display(Name = "Kỳ học")]
         public string ky_hoc { get; set; }
 
         [Column(TypeName = "date")]
+        [Display(Name = "Bắt đầu")]
         public DateTime? bat_dau { get; set; }
 
         [Column(TypeName = "date")]
+        [Display(Name = "Kết thúc")]
         public DateTime? ket_thuc { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

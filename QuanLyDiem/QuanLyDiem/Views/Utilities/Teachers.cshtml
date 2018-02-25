@@ -5,16 +5,9 @@
     Layout = "~/Views/Shared/HomeMaster.cshtml";
 }
 
-<h2>Teachers</h2>
-
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+<h2>Danh sách giáo viên</h2>
 <table class="table">
     <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.TaiKhoan.mat_khau)
-        </th>
         <th>
             @Html.DisplayNameFor(model => model.ten)
         </th>
@@ -33,14 +26,10 @@
         <th>
             @Html.DisplayNameFor(model => model.ngay_vao_truong)
         </th>
-        <th></th>
     </tr>
 
 @foreach (var item in Model) {
     <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.TaiKhoan.mat_khau)
-        </td>
         <td>
             @Html.DisplayFor(modelItem => item.ten)
         </td>
@@ -58,11 +47,6 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.ngay_vao_truong)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ma }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ma }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ma })
         </td>
     </tr>
 }

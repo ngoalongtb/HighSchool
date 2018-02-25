@@ -17,9 +17,11 @@ namespace Model.EF
 
         [Key]
         [StringLength(10)]
+        [Display(Name = "Mã")]
         public string ma { get; set; }
 
         [StringLength(255)]
+        [Display(Name = "Tên")]
         public string ten { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
